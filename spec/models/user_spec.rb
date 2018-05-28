@@ -129,6 +129,7 @@ RSpec.describe User, type: :model do
   describe "remember token" do
     before { @user.save }
 
-    its(:remember_token) { should_not be_blank }
+    # its(:remember_token) { should_not be_blank }
+    specify { expect(@user.remember_token).not_to be_blank }
   end
 end
